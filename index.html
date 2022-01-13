@@ -1,0 +1,131 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quan Ly Nhan Vien</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="bg-dark">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6 mx-auto">
+          <h3 class="display-4 text-center text-light font-weight-bold">
+            Quản Lý Nhân Viên
+          </h3>
+          <form id="formQLNV">
+            <div class="row">
+              <div class="col-6 form-group text-light">
+                <label for="">Mã Nhân Viên : </label>
+                <input type="text" class="form-control" id="txtMaNV" />
+                <span id="spanMaNV" class="text-danger"></span> <br />
+                <span id="error_allNumber_MaNV" class="text-danger"></span>
+                <p id="error_minMaxLength_MaNV" class="text-danger"></p>
+              </div>
+              <div class="col-6 form-group text-light">
+                <label for="">Tên Nhân Viên : </label>
+                <input type="text" class="form-control" id="txtTenNV" />
+                <span id="spanTenNV" class="text-danger"></span>
+                <p id="error_allLetter_spanTenNV" class="text-danger"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 form-group text-light">
+                <label for="">Chức vụ: </label>
+                <select name="" id="chucVu" class="form-control">
+                  <option value="1">Nhân viên</option>
+                  <option value="2">Quản lý</option>
+                  <option value="3">Giám đốc</option>
+                </select>
+              </div>
+              <div class="col-6 form-group text-light">
+                <label for="">Lương cơ bản : </label>
+                <input type="text" class="form-control" id="txtLuongCB" />
+                <span id="spanLuongCB" class="text-danger"></span> <br />
+                <span id="error_allNumber_LuongCB" class="text-danger"></span>
+                <p id="error_minMaxValue_LuongCB" class="text-danger"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 form-group text-light">
+                <label for="">Số giờ làm trong tháng : </label>
+                <input type="text" class="form-control" id="txtSoGioLam" />
+                <span id="spanSoGioLam" class="text-danger"></span> <br />
+                <span id="error_allNumber_SoGioLam" class="text-danger"></span>
+                <p id="error_minMaxValue_SoGioLam" class="text-danger"></p>
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <button
+                type="button"
+                onclick=""
+                class="btn btn-success"
+                id="btnThemNhanVien"
+              >
+                Thêm Nhân Viên
+              </button>
+
+              <button
+                type="button"
+                onclick=""
+                class="btn btn-info"
+                id="btnCapNhatNhanVien"
+                disabled
+              >
+                Cập Nhật
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-8 mx-auto">
+          <table class="table table-bordered text-light">
+            <thead class="thead-dark">
+              <tr>
+                <th class="text-center">Mã Nhân Viên</th>
+                <th class="text-center">Tên Nhân Viên</th>
+                <th class="text-center">Chức vụ</th>
+                <th class="text-center">Lương cơ bản</th>
+                <th class="text-center">Số giờ làm trong tháng</th>
+                <th class="text-center">Chức năng</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyNhanVien"></tbody>
+          </table>
+        </div>
+      </div>
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+        integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <!-- models - protoptype -->
+      <script src="./models/NhanVien.js"></script>
+      <script src="./models/Validation.js"></script>
+      <!-- file xử lý -->
+      <script src="./js/index.js"></script>
+    </div>
+  </body>
+</html>
